@@ -28,3 +28,8 @@ var search = function(nums, target) {
   }
   return -1;
 };
+
+
+/**
+*Second Question: Sum of the Range
+*/
