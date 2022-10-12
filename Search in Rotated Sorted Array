@@ -33,3 +33,36 @@ var search = function(nums, target) {
 /**
 *Second Question: Sum of the Range
 */
+
+/**
+ * @param {number[]} nums
+ * @param {number} lower
+ * @param {number} upper
+ * @return {number}
+ */
+var countRangeSum = function(nums, lower, upper) {
+  
+  let res=[];
+  
+  helper(nums,res,0);
+  
+
+  
+  res.sort((a,b)=>a-b)
+ 
+  let final=[];
+  for(let i=0;i<res.length;i++){
+     if(res[i]<=upper && res[i]>=lower) final.push(res[i]);
+  }
+
+return final.length;  
+};
+function helper(nums,res,j){
+  if(j==nums.length) return;
+  let sum=0;
+  for(let i=j;i<nums.length;i++){
+     sum+=nums[i];
+    res.push(sum);
+  }
+  helper(nums,res,j+1)
+}
