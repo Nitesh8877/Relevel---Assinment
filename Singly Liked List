@@ -1,0 +1,30 @@
+/**
+*Implement getHead(), isEmpty() methods for singly linked list
+*/
+/**
+*getHead()
+*/
+
+class Node{
+constructor(data){  
+  this.data=data;
+  this.next=null;
+}
+
+let node=new Node(10);
+let node2=new Node(20);
+
+/**
+*getHead()
+*/
+if(head!=null){
+return head.val;
+}
+
+/**
+*isEmpty()
+*/
+
+if(head==null){
+    return null;
+  }
