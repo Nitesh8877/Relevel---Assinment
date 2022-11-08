@@ -1,0 +1,18 @@
+var reverseList = function(head) {
+  let [prev, curr, temp] = [null, head, null];
+  while (curr) {
+    // console.log("curr.next1=",curr.next)
+    temp = curr.next;
+    // console.log("temp=",temp)
+    curr.next = prev;
+   // console.log("curr.next2=",curr.next)
+    prev = curr;
+    // console.log("prev=",prev)
+    curr = temp;
+    // console.log("curr=",curr)
+  }
+  return prev;
+    
+};
+
+console.log(reverseList([1,2,3,4,5]));
