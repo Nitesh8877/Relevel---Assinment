@@ -1,0 +1,47 @@
+//Adding the data from the tree
+
+class Node {
+    constructor(data) {
+        this.data = data
+        this.left = null
+        this.right = null
+    }
+}
+let root = new Node(1)
+root.left = new Node(2)
+root.right = new Node(2)
+root.left.left = new Node(3)
+root.right.right = new Node(3)
+console.log(root)
+
+
+//Deleting the data from the tree
+
+//delete in the binary tree
+
+function Delete(root,key){
+    if(root==null) return;
+    if(root.left==null && root.right==null){
+        if(root.data==key){
+            root=null;
+            return;
+        }
+        else 
+        return;
+
+    }
+    let q=[];
+    q.push(root);
+    let temp=[],keyNode=null;
+    while(q.length>0){
+        temp=q[0];
+        q.shift();
+        if(temp.data==key)
+        keyNode=temp;
+        if(temp.left!=null)
+        q.push(temp.left);
+        if(temp.right!=null)
+        q.push(temp.right);
+    }
+    return keyNode.data==key;
+}
