@@ -1,0 +1,40 @@
+
+class Node{
+  constructor(data){
+  this.data=data;
+  this.left=null;
+  this.right=null;
+  }
+
+}
+
+let root=new Node(1);
+root.left=new Node(2);
+root.right=new Node(5);
+root.left.left=new Node(3);
+root.left.right=new Node(4);
+root.right.right=new Node(6);
+
+console.log(flatten(root));
+
+function flatten(node){
+  let list=[];
+  preorder(node,list);
+  if(list.length==0) return;
+  
+  for(let i=0;i<list.length;i++){
+  
+  const root=list[i];
+  root.left=null;
+  root.right=list[i+1];
+  }
+  
+}
+
+funciton preorder(root,list){
+  if(!root) return;
+  list.push(root);
+  preorder(root.left);
+  preorder(root.right);
+
+}
